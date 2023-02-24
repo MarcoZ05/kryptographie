@@ -1,0 +1,120 @@
+:root {
+  --black: #1a1a1a;
+  --grey: #2b2b2b;
+  --white: #dce1e9;
+  --primary-light: #98ddf2;
+  --primary: #53d8fb;
+  --primary-dark: #1a9bfc;
+  --secondary-light: #eed178;
+  --secondary: #ffc107;
+}
+
+* {
+  transition: all 0.1s linear;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+/* background color of selected text */
+::selection {
+  background-color: var(--primary-light);
+  color: var(--black);
+}
+
+body {
+  background-color: var(--grey);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--black);
+}
+form * {
+  margin: 0.5rem;
+}
+form label {
+  text-align: left;
+}
+form input {
+  width: 90%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--grey);
+  color: var(--white);
+  outline: none;
+}
+form input:focus {
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+form input::placeholder {
+  color: var(--white);
+}
+form input:hover {
+  animation: backgroundSlideThrough 0.5s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes backgroundSlideThrough {
+  0% {
+    background: linear-gradient(
+      90deg,
+      var(--primary-light) 0%,
+      var(--primary-light) 50%,
+      var(--grey) 50%,
+      var(--grey) 100%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    color: var(--white);
+  }
+  50% {
+    background: linear-gradient(
+      90deg,
+      var(--primary-light) 0%,
+      var(--primary-light) 50%,
+      var(--grey) 50%,
+      var(--grey) 100%
+    );
+    background-size: 200% 100%;
+    background-position: left;
+    color: var(--black);
+  }
+  50.1% {
+    background: linear-gradient(
+      90deg,
+      var(--grey) 0%,
+      var(--grey) 50%,
+      var(--primary-light) 50%,
+      var(--primary-light) 100%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    color: var(--black);
+  }
+  100% {
+    background: linear-gradient(
+      90deg,
+      var(--grey) 0%,
+      var(--grey) 50%,
+      var(--primary-light) 50%,
+      var(--primary-light) 100%
+    );
+    background-size: 200% 100%;
+    background-position: left;
+    color: var(--white);
+  }
+}
