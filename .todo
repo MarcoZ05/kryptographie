@@ -1,8 +1,8 @@
-# Bugs
+// Bugs
 [] caesar => negative shift
 [] css => footer color stays white while animation 
 
-# Additions
+// Additions
 [] skytale
 [] gartenzaun
 [] krypo-selection
