@@ -8,34 +8,79 @@
   --secondary-light: #eed178;
   --secondary: #ffc107;
 }
-
-* {
-  transition: all 0.1s linear;
-  color: var(--white);
-  font-family: "Poppins", sans-serif;
-  user-select: none;
-}
-
-/* background color of selected text */
 ::selection {
   background-color: var(--primary-light);
   color: var(--black);
 }
 
+* {
+  transition: all 0.1s linear;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
 body {
-  background-color: var(--grey);
   display: grid;
   place-items: center;
   height: 100vh;
   margin: 0;
+
+  color: var(--white);
+  background-color: var(--grey);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: var(--black);
+  color: var(--white);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: var(--black);
+}
+footer div {
+  height: 100%;
+  width: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+}
+footer div:hover {
+  animation: backgroundSlideIn 0.25s forwards ease-out;
+}
+footer div:active {
+  background: var(--primary-light) !important;
 }
 
 form {
+  padding: 2rem;
+
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  padding: 2rem;
+
   border-radius: 1rem;
   background-color: var(--black);
 }
@@ -48,6 +93,7 @@ form label {
 form input {
   width: 90%;
   padding: 0.5rem;
+
   border: none;
   border-radius: 0.5rem;
   background-color: var(--grey);
@@ -61,7 +107,12 @@ form input::placeholder {
   color: var(--white);
 }
 form input:hover {
-  animation: backgroundSlideThrough 0.5s forwards;
+  animation: backgroundSlideThrough 0.5s forwards ease-in-out;
+}
+
+h1:hover,label:hover {
+  color: var(--primary-light);
+  text-shadow: 0 0 0.5rem var(--primary-light);
 }
 
 .hidden {
@@ -116,5 +167,32 @@ form input:hover {
     background-size: 200% 100%;
     background-position: left;
     color: var(--white);
+  }
+}
+
+@keyframes backgroundSlideIn {
+  0% {
+    background: linear-gradient(
+      90deg,
+      var(--primary-light) 0%,
+      var(--primary-light) 50%,
+      var(--black) 50%,
+      var(--black) 100%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    color: var(--black) !important;
+  }
+  100% {
+    background: linear-gradient(
+      90deg,
+      var(--primary-light) 0%,
+      var(--primary-light) 50%,
+      var(--black) 50%,
+      var(--black) 100%
+    );
+    background-size: 200% 100%;
+    background-position: left;
+    color: var(--black) !important;
   }
 }
