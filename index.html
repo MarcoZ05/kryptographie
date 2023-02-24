@@ -14,23 +14,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Kryptographie</h1>
+    </header>
+
     <form class="caesar">
       <h1>Caesar-Verschlüsselung</h1>
-      <label for="caesar_clearInput"></label>Klartext:
-      <input type="text" id="caesar_clearInput" autocomplete="off" />
-      <label for="caesar_cipherInput"></label>Geheimtext:
-      <input type="text" id="caesar_cipherInput" autocomplete="off" />
-      <label for="caesar_shiftInput"></label>Schlüssel:
-      <input
-        type="number"
-        id="caesar_shiftInput"
-        max="25"
-        min="-25"
-        value="3"
-        placeholder="Wert zwischen -25 und 25"
-        autocomplete="off"
-      />
+      <label for="caesar_clearInput"
+        >Klartext: <input type="text" id="caesar_clearInput" autocomplete="off"
+      /></label>
+      <label for="caesar_cipherInput"
+        >Geheimtext:
+        <input type="text" id="caesar_cipherInput" autocomplete="off"
+      /></label>
+      <label for="caesar_shiftInput"
+        >Schlüssel:
+        <input
+          type="number"
+          id="caesar_shiftInput"
+          max="25"
+          min="-25"
+          value="3"
+          placeholder="Wert zwischen -25 und 25"
+          autocomplete="off"
+      /></label>
     </form>
+
+    <footer>
+      <div id="Caesar">Caesar</div>
+    </footer>
 
     <script src="js/index.js" type="module"></script>
   </body>
